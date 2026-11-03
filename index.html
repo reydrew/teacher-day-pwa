@@ -4,6 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>教師節快樂!</title>
+
+<!-- 1. 引入 PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<!-- 2. 設定 iOS Safari 主題顏色與 App 圖示 -->
+<meta name="theme-color" content="#8ec5fc">
+
+<link rel="apple-touch-icon" href="https://cdn-icons-
+png.flaticon.com/512/3429/3429312.png">
+
+<style>
+/* 原本的 CSS 樣式保持不變 */
+</style>
+</head>
+
+<body>
+
+<!-- 原本的 HTML 內容保持不變 -->
+
+<!-- 3. 註冊 Service Worker 的腳本 -->
+<script>
+if ('serviceWorker' in navigator) {
+window.addEventListener('load', () => {
+navigator.serviceWorker.register('./sw.js')
+.then(reg => console.log('Service Worker 註冊成功!',
+reg))
+.catch(err => console.log('Service Worker 註冊失敗:',
+err));
+});
+}
+</script>
+</body>
+</html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教師節快樂!</title>
 <style>
 
 * {
